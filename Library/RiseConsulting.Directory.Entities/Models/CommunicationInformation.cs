@@ -34,6 +34,8 @@ namespace RiseConsulting.Directory.Entities.Models
         [MaxLength(255)]
         public Guid DirectoryUsersId { get; set; }
 
+        [Required]
+        [DataType(DataType.Date)]
         public DateTime CreatedDate { get; set; }
 
         public virtual DirectoryUsers DirectoryUsers { get; set; }

@@ -35,6 +35,6 @@ namespace RiseConsulting.Directory.Entities.Models
 
 
         public virtual Company Company { get; set; }
-        public virtual Users Users { get; set; }
+        public virtual Users User { get; set; }
     }
 }

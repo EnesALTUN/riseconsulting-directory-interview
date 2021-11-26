@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RiseConsulting.Directory.Data;
 
 namespace RiseConsulting.Directory.Data.Migrations
 {
     [DbContext(typeof(RiseConsultingDirectoryDbContext))]
-    partial class RiseConsultingDirectoryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211126191928_SecondInitialize")]
+    partial class SecondInitialize
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

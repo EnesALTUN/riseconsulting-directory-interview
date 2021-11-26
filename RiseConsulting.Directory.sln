@@ -7,31 +7,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{9D5F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{52B3D619-6027-4644-AF39-514E86205C83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.Core", "Library\RiseConsulting.Directory.Core\RiseConsulting.Directory.Core.csproj", "{2A631F1C-3596-4B60-B11A-7D176E13096E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.Core", "Library\RiseConsulting.Directory.Core\RiseConsulting.Directory.Core.csproj", "{2A631F1C-3596-4B60-B11A-7D176E13096E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.Data", "Library\RiseConsulting.Directory.Data\RiseConsulting.Directory.Data.csproj", "{A05A615E-F449-4E2B-9452-13BC48444F9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.Data", "Library\RiseConsulting.Directory.Data\RiseConsulting.Directory.Data.csproj", "{A05A615E-F449-4E2B-9452-13BC48444F9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.Entities", "Library\RiseConsulting.Directory.Entities\RiseConsulting.Directory.Entities.csproj", "{8A0F13C1-B7B2-4D44-B5A2-9C031296B93F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.Entities", "Library\RiseConsulting.Directory.Entities\RiseConsulting.Directory.Entities.csproj", "{8A0F13C1-B7B2-4D44-B5A2-9C031296B93F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.Repository", "Library\RiseConsulting.Directory.Repository\RiseConsulting.Directory.Repository.csproj", "{F8C22A75-FD3A-4B82-81AE-A7613D195322}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.Repository", "Library\RiseConsulting.Directory.Repository\RiseConsulting.Directory.Repository.csproj", "{F8C22A75-FD3A-4B82-81AE-A7613D195322}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.CommunicationInformationService", "Services\RiseConsulting.Directory.CommunicationInformationService\RiseConsulting.Directory.CommunicationInformationService.csproj", "{CBFC8803-0783-425D-AD7C-11559A66BC43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.CommunicationInformationService", "Services\RiseConsulting.Directory.CommunicationInformationService\RiseConsulting.Directory.CommunicationInformationService.csproj", "{CBFC8803-0783-425D-AD7C-11559A66BC43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.CompanyService", "Services\RiseConsulting.Directory.CompanyService\RiseConsulting.Directory.CompanyService.csproj", "{6FAD7A5D-CE77-464A-A769-C32C91E8A9C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.CompanyService", "Services\RiseConsulting.Directory.CompanyService\RiseConsulting.Directory.CompanyService.csproj", "{6FAD7A5D-CE77-464A-A769-C32C91E8A9C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.DirectoryService", "Services\RiseConsulting.Directory.DirectoryService\RiseConsulting.Directory.DirectoryService.csproj", "{AE5481AC-5FE7-4F13-A93C-442EA7A5EF92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.DirectoryService", "Services\RiseConsulting.Directory.DirectoryService\RiseConsulting.Directory.DirectoryService.csproj", "{AE5481AC-5FE7-4F13-A93C-442EA7A5EF92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.UserService", "Services\RiseConsulting.Directory.UserService\RiseConsulting.Directory.UserService.csproj", "{7B45C7AF-5A60-4C66-BDD9-984F992298BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.UserService", "Services\RiseConsulting.Directory.UserService\RiseConsulting.Directory.UserService.csproj", "{7B45C7AF-5A60-4C66-BDD9-984F992298BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.ApiGateway", "RiseConsulting.Directory.ApiGateway\RiseConsulting.Directory.ApiGateway.csproj", "{53394BA2-FA4F-4A99-AB7E-26CB91BC6EF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.ApiGateway", "RiseConsulting.Directory.ApiGateway\RiseConsulting.Directory.ApiGateway.csproj", "{53394BA2-FA4F-4A99-AB7E-26CB91BC6EF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.CommunicationInformationApi", "RiseConsulting.Directory.CommunicationInformationApi\RiseConsulting.Directory.CommunicationInformationApi.csproj", "{0F5C27A2-6D46-4E8D-B660-D721E93BAE35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.CommunicationInformationApi", "RiseConsulting.Directory.CommunicationInformationApi\RiseConsulting.Directory.CommunicationInformationApi.csproj", "{0F5C27A2-6D46-4E8D-B660-D721E93BAE35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.CompanyApi", "RiseConsulting.Directory.CompanyApi\RiseConsulting.Directory.CompanyApi.csproj", "{C0407F7C-F1DA-4267-A5E4-DBAE9A476DA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.CompanyApi", "RiseConsulting.Directory.CompanyApi\RiseConsulting.Directory.CompanyApi.csproj", "{C0407F7C-F1DA-4267-A5E4-DBAE9A476DA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.DirectoryUsersApi", "RiseConsulting.Directory.DirectoryUsersApi\RiseConsulting.Directory.DirectoryUsersApi.csproj", "{3ADC26AE-3181-4B90-8E49-43F19BBA189A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.UsersApi", "RiseConsulting.Directory.UsersApi\RiseConsulting.Directory.UsersApi.csproj", "{6214B5D0-651F-4CA3-B0DA-DD811525F3BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.DirectoryUsersApi", "RiseConsulting.Directory.DirectoryUsersApi\RiseConsulting.Directory.DirectoryUsersApi.csproj", "{3ADC26AE-3181-4B90-8E49-43F19BBA189A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,10 +85,6 @@ Global
 		{3ADC26AE-3181-4B90-8E49-43F19BBA189A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ADC26AE-3181-4B90-8E49-43F19BBA189A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3ADC26AE-3181-4B90-8E49-43F19BBA189A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6214B5D0-651F-4CA3-B0DA-DD811525F3BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6214B5D0-651F-4CA3-B0DA-DD811525F3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6214B5D0-651F-4CA3-B0DA-DD811525F3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6214B5D0-651F-4CA3-B0DA-DD811525F3BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

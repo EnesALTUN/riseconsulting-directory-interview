@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace RiseConsulting.Directory.CompanyApi.V1.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class CompanyController : ControllerBase
     {
         private readonly ICompanyService _companyService;

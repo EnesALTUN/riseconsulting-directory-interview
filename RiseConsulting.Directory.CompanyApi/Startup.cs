@@ -7,7 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using RiseConsulting.Directory.CompanyService.Infrastructure;
 using RiseConsulting.Directory.Data;
+using RiseConsulting.Directory.Entities.Models;
+using RiseConsulting.Directory.Repository;
+using RiseConsulting.Directory.Repository.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +34,10 @@ namespace RiseConsulting.Directory.CompanyApi
             services.AddDbContext<RiseConsultingDirectoryDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), mig => mig.MigrationsAssembly("RiseConsulting.Directory.Data"))
             );
+
+            services.AddScoped(typeof(IGenericRepository<Company>), typeof(GenericRepository<Company>));
+
+            services.AddTransient<ICompanyService, CompanyService.CompanyService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

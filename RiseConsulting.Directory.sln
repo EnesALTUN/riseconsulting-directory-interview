@@ -19,8 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.CompanyService", "Services\RiseConsulting.Directory.CompanyService\RiseConsulting.Directory.CompanyService.csproj", "{6FAD7A5D-CE77-464A-A769-C32C91E8A9C0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.DirectoryService", "Services\RiseConsulting.Directory.DirectoryService\RiseConsulting.Directory.DirectoryService.csproj", "{AE5481AC-5FE7-4F13-A93C-442EA7A5EF92}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.UserService", "Services\RiseConsulting.Directory.UserService\RiseConsulting.Directory.UserService.csproj", "{7B45C7AF-5A60-4C66-BDD9-984F992298BE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.ApiGateway", "RiseConsulting.Directory.ApiGateway\RiseConsulting.Directory.ApiGateway.csproj", "{53394BA2-FA4F-4A99-AB7E-26CB91BC6EF6}"
@@ -30,6 +28,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.CompanyApi", "RiseConsulting.Directory.CompanyApi\RiseConsulting.Directory.CompanyApi.csproj", "{C0407F7C-F1DA-4267-A5E4-DBAE9A476DA6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.DirectoryUsersApi", "RiseConsulting.Directory.DirectoryUsersApi\RiseConsulting.Directory.DirectoryUsersApi.csproj", "{3ADC26AE-3181-4B90-8E49-43F19BBA189A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.DirectoryUsersService", "Services\RiseConsulting.Directory.DirectoryUsersService\RiseConsulting.Directory.DirectoryUsersService.csproj", "{FAD7CC09-FC93-48BF-B9F2-F66C07992CC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,10 +61,6 @@ Global
 		{6FAD7A5D-CE77-464A-A769-C32C91E8A9C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FAD7A5D-CE77-464A-A769-C32C91E8A9C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FAD7A5D-CE77-464A-A769-C32C91E8A9C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AE5481AC-5FE7-4F13-A93C-442EA7A5EF92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE5481AC-5FE7-4F13-A93C-442EA7A5EF92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AE5481AC-5FE7-4F13-A93C-442EA7A5EF92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AE5481AC-5FE7-4F13-A93C-442EA7A5EF92}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7B45C7AF-5A60-4C66-BDD9-984F992298BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7B45C7AF-5A60-4C66-BDD9-984F992298BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B45C7AF-5A60-4C66-BDD9-984F992298BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -85,6 +81,10 @@ Global
 		{3ADC26AE-3181-4B90-8E49-43F19BBA189A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ADC26AE-3181-4B90-8E49-43F19BBA189A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3ADC26AE-3181-4B90-8E49-43F19BBA189A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAD7CC09-FC93-48BF-B9F2-F66C07992CC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAD7CC09-FC93-48BF-B9F2-F66C07992CC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAD7CC09-FC93-48BF-B9F2-F66C07992CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAD7CC09-FC93-48BF-B9F2-F66C07992CC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,8 +96,8 @@ Global
 		{F8C22A75-FD3A-4B82-81AE-A7613D195322} = {9D5F4E11-2390-46E0-9F14-2BD637A31519}
 		{CBFC8803-0783-425D-AD7C-11559A66BC43} = {52B3D619-6027-4644-AF39-514E86205C83}
 		{6FAD7A5D-CE77-464A-A769-C32C91E8A9C0} = {52B3D619-6027-4644-AF39-514E86205C83}
-		{AE5481AC-5FE7-4F13-A93C-442EA7A5EF92} = {52B3D619-6027-4644-AF39-514E86205C83}
 		{7B45C7AF-5A60-4C66-BDD9-984F992298BE} = {52B3D619-6027-4644-AF39-514E86205C83}
+		{FAD7CC09-FC93-48BF-B9F2-F66C07992CC7} = {52B3D619-6027-4644-AF39-514E86205C83}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D170D37-24C2-4DBC-9CD3-972CAFFDE8F2}

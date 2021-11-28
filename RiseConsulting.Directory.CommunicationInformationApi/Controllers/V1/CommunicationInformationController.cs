@@ -4,10 +4,11 @@ using RiseConsulting.Directory.Entities.Models;
 using System;
 using System.Threading.Tasks;
 
-namespace RiseConsulting.Directory.CommunicationInformationApi.Controllers
+namespace RiseConsulting.Directory.CommunicationInformationApi.Controllers.V1
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class CommunicationInformationController : ControllerBase
     {
         private readonly ICommunicationInformationService _communicationInformationService;

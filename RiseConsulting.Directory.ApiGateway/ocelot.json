@@ -113,6 +113,30 @@
         "PeriodTimespan": 1,
         "Limit": 1
       }
+    },
+    {
+      "DownstreamPathTemplate": "/api/{version}/report/{action}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 4000
+        }
+      ],
+      "UpstreamPathTemplate": "/service/{version}/report/{action}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/{version}/report/{action}/{location}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 4000
+        }
+      ],
+      "UpstreamPathTemplate": "/service/{version}/report/{action}/{location}",
+      "UpstreamHttpMethod": [ "Get" ]
     }
   ]
 }

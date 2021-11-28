@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Library\RiseConsulting.Directory.Data\RiseConsulting.Directory.Data.csproj" />
     <ProjectReference Include="..\Library\RiseConsulting.Directory.Repository\RiseConsulting.Directory.Repository.csproj" />
+    <ProjectReference Include="..\Services\RiseConsulting.Directory.ReportService\RiseConsulting.Directory.ReportService.csproj" />
   </ItemGroup>
 
 </Project>

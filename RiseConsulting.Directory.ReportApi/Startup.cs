@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using RiseConsulting.Directory.Data;
 using RiseConsulting.Directory.Entities.Models;
+using RiseConsulting.Directory.ReportService.Infrastructure;
 using RiseConsulting.Directory.Repository;
 using RiseConsulting.Directory.Repository.Infrastructure;
 using System;
@@ -36,6 +37,8 @@ namespace RiseConsulting.Directory.ReportApi
             );
 
             services.AddScoped(typeof(IGenericRepository<CommunicationInformation>), typeof(GenericRepository<CommunicationInformation>));
+
+            services.AddTransient<IReportService, ReportService.ReportService>();
 
             services.AddControllers();
 

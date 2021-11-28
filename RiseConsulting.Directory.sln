@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.Di
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.ReportApi", "RiseConsulting.Directory.ReportApi\RiseConsulting.Directory.ReportApi.csproj", "{00048320-9140-4C7B-86DC-F88D699DB9E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.ReportService", "Services\RiseConsulting.Directory.ReportService\RiseConsulting.Directory.ReportService.csproj", "{CEDBB604-D372-44A1-904F-BD655D6CD859}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{00048320-9140-4C7B-86DC-F88D699DB9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00048320-9140-4C7B-86DC-F88D699DB9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00048320-9140-4C7B-86DC-F88D699DB9E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEDBB604-D372-44A1-904F-BD655D6CD859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEDBB604-D372-44A1-904F-BD655D6CD859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEDBB604-D372-44A1-904F-BD655D6CD859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEDBB604-D372-44A1-904F-BD655D6CD859}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +110,7 @@ Global
 		{6FAD7A5D-CE77-464A-A769-C32C91E8A9C0} = {52B3D619-6027-4644-AF39-514E86205C83}
 		{7B45C7AF-5A60-4C66-BDD9-984F992298BE} = {52B3D619-6027-4644-AF39-514E86205C83}
 		{FAD7CC09-FC93-48BF-B9F2-F66C07992CC7} = {52B3D619-6027-4644-AF39-514E86205C83}
+		{CEDBB604-D372-44A1-904F-BD655D6CD859} = {52B3D619-6027-4644-AF39-514E86205C83}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D170D37-24C2-4DBC-9CD3-972CAFFDE8F2}

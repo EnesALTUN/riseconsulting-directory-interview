@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Library\RiseConsulting.Directory.Core\RiseConsulting.Directory.Core.csproj" />
+    <ProjectReference Include="..\..\Library\RiseConsulting.Directory.Data\RiseConsulting.Directory.Data.csproj" />
+  </ItemGroup>
+
+</Project>

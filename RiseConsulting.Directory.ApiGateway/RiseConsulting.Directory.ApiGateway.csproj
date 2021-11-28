@@ -8,4 +8,8 @@
     <PackageReference Include="Ocelot" Version="17.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Library\RiseConsulting.Directory.Core\RiseConsulting.Directory.Core.csproj" />
+  </ItemGroup>
+
 </Project>

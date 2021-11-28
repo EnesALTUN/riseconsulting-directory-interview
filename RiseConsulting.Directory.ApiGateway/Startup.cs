@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using RiseConsulting.Directory.Core.Middlewares;
 
 namespace RiseConsulting.Directory.ApiGateway
 {
@@ -24,6 +25,8 @@ namespace RiseConsulting.Directory.ApiGateway
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
 
             app.UseRouting();
 

@@ -4,7 +4,7 @@ using RiseConsulting.Directory.Entities.Models;
 using System;
 using System.Threading.Tasks;
 
-namespace RiseConsulting.Directory.CompanyApi.V1.Controllers
+namespace RiseConsulting.Directory.CompanyApi.Controllers.V1
 {
     [ApiController]
     [ApiVersion("1.0")]

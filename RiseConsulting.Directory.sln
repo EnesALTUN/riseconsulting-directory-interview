@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.DirectoryUsersApi", "RiseConsulting.Directory.DirectoryUsersApi\RiseConsulting.Directory.DirectoryUsersApi.csproj", "{3ADC26AE-3181-4B90-8E49-43F19BBA189A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.DirectoryUsersService", "Services\RiseConsulting.Directory.DirectoryUsersService\RiseConsulting.Directory.DirectoryUsersService.csproj", "{FAD7CC09-FC93-48BF-B9F2-F66C07992CC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.DirectoryUsersService", "Services\RiseConsulting.Directory.DirectoryUsersService\RiseConsulting.Directory.DirectoryUsersService.csproj", "{FAD7CC09-FC93-48BF-B9F2-F66C07992CC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.ReportApi", "RiseConsulting.Directory.ReportApi\RiseConsulting.Directory.ReportApi.csproj", "{00048320-9140-4C7B-86DC-F88D699DB9E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,10 @@ Global
 		{FAD7CC09-FC93-48BF-B9F2-F66C07992CC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAD7CC09-FC93-48BF-B9F2-F66C07992CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAD7CC09-FC93-48BF-B9F2-F66C07992CC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00048320-9140-4C7B-86DC-F88D699DB9E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00048320-9140-4C7B-86DC-F88D699DB9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00048320-9140-4C7B-86DC-F88D699DB9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00048320-9140-4C7B-86DC-F88D699DB9E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

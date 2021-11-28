@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Library\RiseConsulting.Directory.Core\RiseConsulting.Directory.Core.csproj" />
     <ProjectReference Include="..\Library\RiseConsulting.Directory.Data\RiseConsulting.Directory.Data.csproj" />
     <ProjectReference Include="..\Library\RiseConsulting.Directory.Entities\RiseConsulting.Directory.Entities.csproj" />
     <ProjectReference Include="..\Library\RiseConsulting.Directory.Repository\RiseConsulting.Directory.Repository.csproj" />

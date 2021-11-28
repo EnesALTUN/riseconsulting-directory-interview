@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using RiseConsulting.Directory.CompanyService.Infrastructure;
+using RiseConsulting.Directory.Core.Models;
 using RiseConsulting.Directory.Entities.Models;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace RiseConsulting.Directory.CompanyApi.Controllers.V1
@@ -21,13 +24,23 @@ namespace RiseConsulting.Directory.CompanyApi.Controllers.V1
         [HttpGet]
         public async Task<IActionResult> GetAllCompany()
         {
-            return Ok(await _companyService.GetAllCompanyAsync());
+            List<Company> companies = await _companyService.GetAllCompanyAsync();
+
+            if (companies is null)
+                return NoContent();
+                
+            return Ok(new ApiReturn<List<Company>> { Success = true, Code = StatusCodes.Status200OK, Data = companies });
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCompany(Guid id)
         {
-            return Ok(await _companyService.GetCompanyByIdAsync(id));
+            Company company = await _companyService.GetCompanyByIdAsync(id);
+
+            if (company is null)
+                return NoContent();
+
+            return Ok(new ApiReturn<Company> { Success = true, Code = StatusCodes.Status200OK, Data = company });
         }
 
         [HttpPost]

@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
+using RiseConsulting.Directory.Core.Models;
 using RiseConsulting.Directory.Core.ReportModel;
 using RiseConsulting.Directory.ReportService.Infrastructure;
 using System;
@@ -52,7 +54,7 @@ namespace RiseConsulting.Directory.ReportApi.Controllers.V1
                 reportReturns = JsonConvert.DeserializeObject<List<ReportReturn>>(cacheJsonItem);
             }
 
-            return Ok(reportReturns);
+            return Ok(new ApiReturn<List<ReportReturn>>{ Success = true, Code = StatusCodes.Status200OK, Data = reportReturns});
         }
 
         [HttpGet("{location}")]
@@ -86,7 +88,7 @@ namespace RiseConsulting.Directory.ReportApi.Controllers.V1
                 result = JsonConvert.DeserializeObject<ReportReturn>(cacheJsonItem);
             }
 
-            return Ok(result);
+            return Ok(new ApiReturn<ReportReturn> { Success = true, Code = StatusCodes.Status200OK, Data = result });
         }
 
         [HttpGet("{location}")]
@@ -120,7 +122,7 @@ namespace RiseConsulting.Directory.ReportApi.Controllers.V1
                 result = JsonConvert.DeserializeObject<ReportReturn>(cacheJsonItem);
             }
 
-            return Ok(result);
+            return Ok(new ApiReturn<ReportReturn> { Success = true, Code = StatusCodes.Status200OK, Data = result });
         }
     }
 }

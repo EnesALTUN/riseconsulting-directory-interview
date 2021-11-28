@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using RiseConsulting.Directory.CommunicationInformationService.Infrastructure;
+using RiseConsulting.Directory.Core.Models;
 using RiseConsulting.Directory.DirectoryUsersService.Infrastructure;
 using RiseConsulting.Directory.Entities.Models;
 using RiseConsulting.Directory.Entities.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace RiseConsulting.Directory.DirectoryUsersApi.Controllers.V1
@@ -25,13 +28,23 @@ namespace RiseConsulting.Directory.DirectoryUsersApi.Controllers.V1
         [HttpGet]
         public async Task<IActionResult> GetAllDirectoryUsers()
         {
-            return Ok(await _directoryUsersService.GetAllDirectoryUsersAsync());
+            List<DirectoryUsers> directoryUsers = await _directoryUsersService.GetAllDirectoryUsersAsync();
+
+            if (directoryUsers is null)
+                return NoContent();
+
+            return Ok(new ApiReturn<List<DirectoryUsers>> { Success = true, Code = StatusCodes.Status200OK, Data = directoryUsers });            
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDirectoryUser(Guid id)
         {
-            return Ok(await _directoryUsersService.GetDirectoryUserByIdAsync(id));
+            DirectoryUsers directoryUser = await _directoryUsersService.GetDirectoryUserByIdAsync(id);
+
+            if (directoryUser is null)
+                return NoContent();
+
+            return Ok(new ApiReturn<DirectoryUsers> { Success = true, Code = StatusCodes.Status200OK, Data = directoryUser });
         }
 
         [HttpGet("{userId}/information/{directoryUserId}")]
@@ -42,7 +55,7 @@ namespace RiseConsulting.Directory.DirectoryUsersApi.Controllers.V1
             if (result is null)
                 return NoContent();
 
-            return Ok(result);
+            return Ok(new ApiReturn<DirectoryUsersInformationVM> { Success = true, Code = StatusCodes.Status200OK, Data = result });
         }
 
         [HttpPost("{userId}/information/{directoryUserId}")]
@@ -59,7 +72,7 @@ namespace RiseConsulting.Directory.DirectoryUsersApi.Controllers.V1
 
             CommunicationInformation addedCommunicationInformation =  await _communicationInformationService.AddCommunicationInformationAsync(communicationInformation);
 
-            return Ok(addedCommunicationInformation);
+            return Ok(new ApiReturn<CommunicationInformation> { Success = true, Code = StatusCodes.Status200OK, Data = addedCommunicationInformation });
         }
 
         [HttpDelete("{userId}/directory/{directoryUserId}/information/{informationId}")]

@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using RiseConsulting.Directory.CommunicationInformationService.Infrastructure;
+using RiseConsulting.Directory.Core.Models;
 using RiseConsulting.Directory.Entities.Models;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace RiseConsulting.Directory.CommunicationInformationApi.Controllers.V1
@@ -21,13 +24,23 @@ namespace RiseConsulting.Directory.CommunicationInformationApi.Controllers.V1
         [HttpGet]
         public async Task<IActionResult> GetAllCommunicationInformations()
         {
-            return Ok(await _communicationInformationService.GetAllCommunicationInformationsAsync());
+            List<CommunicationInformation> communicationInformations = await _communicationInformationService.GetAllCommunicationInformationsAsync();
+
+            if (communicationInformations is null)
+                return NoContent();
+
+            return Ok(new ApiReturn<List<CommunicationInformation>> { Success = true, Code = StatusCodes.Status200OK, Data = communicationInformations });
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCommunicationInformation(Guid id)
         {
-            return Ok(await _communicationInformationService.GetCommunicationInformationByIdAsync(id));
+            CommunicationInformation communicationInformation = await _communicationInformationService.GetCommunicationInformationByIdAsync(id);
+
+            if (communicationInformation is null)
+                return NoContent();
+
+            return Ok(new ApiReturn<CommunicationInformation> { Success = true, Code = StatusCodes.Status200OK, Data = communicationInformation });
         }
 
         [HttpPost]

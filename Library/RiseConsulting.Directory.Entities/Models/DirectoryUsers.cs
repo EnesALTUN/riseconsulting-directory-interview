@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace RiseConsulting.Directory.Entities.Models
 {
@@ -33,8 +34,13 @@ namespace RiseConsulting.Directory.Entities.Models
         public DateTime CreatedDate { get; set; }
 
 
+        [JsonIgnore]
         public virtual ICollection<CommunicationInformation> CommunicationInformation { get; set; }
+
+        [JsonIgnore]
         public virtual Company Company { get; set; }
+
+        [JsonIgnore]
         public virtual Users User { get; set; }
     }
 }

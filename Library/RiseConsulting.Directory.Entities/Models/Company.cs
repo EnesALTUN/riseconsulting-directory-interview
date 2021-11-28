@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace RiseConsulting.Directory.Entities.Models
 {
@@ -22,6 +23,7 @@ namespace RiseConsulting.Directory.Entities.Models
         [DataType(DataType.Date)]
         public DateTime CreatedDate { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<DirectoryUsers> DirectoryUsers { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace RiseConsulting.Directory.ApiGateway
 {
@@ -13,6 +14,11 @@ namespace RiseConsulting.Directory.ApiGateway
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureLogging(config =>
+                {
+                    config.AddDebug();
+                    config.AddConsole();
+                })
                 .ConfigureAppConfiguration((hosting, config) =>
                 {
                     config.AddJsonFile("ocelot.json", false, true);

@@ -16,6 +16,8 @@ namespace RiseConsulting.Directory.ApiGateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOcelot();
+
+            services.AddLogging();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

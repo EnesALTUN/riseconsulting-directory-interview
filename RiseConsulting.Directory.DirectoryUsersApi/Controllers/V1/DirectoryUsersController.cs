@@ -4,10 +4,11 @@ using RiseConsulting.Directory.Entities.Models;
 using System;
 using System.Threading.Tasks;
 
-namespace RiseConsulting.Directory.DirectoryUsersApi.Controllers
+namespace RiseConsulting.Directory.DirectoryUsersApi.Controllers.V1
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class DirectoryUsersController : ControllerBase
     {
         private readonly IDirectoryUsersService _directoryUsersService;

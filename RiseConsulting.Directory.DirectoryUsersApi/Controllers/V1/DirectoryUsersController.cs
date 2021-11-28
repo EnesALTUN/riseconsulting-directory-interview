@@ -62,6 +62,20 @@ namespace RiseConsulting.Directory.DirectoryUsersApi.Controllers.V1
             return Ok(addedCommunicationInformation);
         }
 
+        [HttpDelete("{userId}/directory/{directoryUserId}/information/{informationId}")]
+        public async Task<IActionResult> DeleteDirectoryInformation(Guid userId, Guid directoryUserId, Guid informationId)
+        {
+            DirectoryUsers directoryUser = _directoryUsersService.GetDirectoryUserWithCriteria(filter =>
+                filter.UserId == userId && filter.DirectoryUsersId == directoryUserId);
+
+            if (directoryUser is null)
+                return NoContent();
+
+            await _communicationInformationService.DeleteCommunicationInformationAsync(informationId);
+
+            return Ok();
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddDirectoryUser([FromBody] DirectoryUsers directoryUser)
         {

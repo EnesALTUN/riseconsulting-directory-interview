@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using RiseConsulting.Directory.CommunicationInformationService.Infrastructure;
+using RiseConsulting.Directory.Data;
+using RiseConsulting.Directory.Entities.Models;
+using RiseConsulting.Directory.Repository;
+using RiseConsulting.Directory.Repository.Infrastructure;
 
 namespace RiseConsulting.Directory.CommunicationInformationApi
 {
@@ -25,6 +25,13 @@ namespace RiseConsulting.Directory.CommunicationInformationApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<RiseConsultingDirectoryDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), mig => mig.MigrationsAssembly("RiseConsulting.Directory.Data"))
+            );
+
+            services.AddScoped(typeof(IGenericRepository<CommunicationInformation>), typeof(GenericRepository<CommunicationInformation>));
+
+            services.AddTransient<ICommunicationInformationService, CommunicationInformationService.CommunicationInformationService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

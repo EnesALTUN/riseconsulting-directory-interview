@@ -1,5 +1,6 @@
 ﻿using RiseConsulting.Directory.Entities.Infrastructure;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -22,11 +23,9 @@ namespace RiseConsulting.Directory.Entities.Models
         public string Surname { get; set; }
 
         [Required]
-        [MaxLength(255)]
         public Guid CompanyId { get; set; }
 
         [Required]
-        [MaxLength(255)]
         public Guid UserId { get; set; }
 
         [Required]
@@ -34,6 +33,7 @@ namespace RiseConsulting.Directory.Entities.Models
         public DateTime CreatedDate { get; set; }
 
 
+        public virtual ICollection<CommunicationInformation> CommunicationInformation { get; set; }
         public virtual Company Company { get; set; }
         public virtual Users User { get; set; }
     }

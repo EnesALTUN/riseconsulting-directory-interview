@@ -1,5 +1,6 @@
 ﻿using RiseConsulting.Directory.Entities.Infrastructure;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -31,7 +32,6 @@ namespace RiseConsulting.Directory.Entities.Models
         public string Detail { get; set; }
 
         [Required]
-        [MaxLength(255)]
         public Guid DirectoryUsersId { get; set; }
 
         [Required]

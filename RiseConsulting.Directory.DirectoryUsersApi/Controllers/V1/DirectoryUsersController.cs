@@ -4,7 +4,6 @@ using RiseConsulting.Directory.DirectoryUsersService.Infrastructure;
 using RiseConsulting.Directory.Entities.Models;
 using RiseConsulting.Directory.Entities.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace RiseConsulting.Directory.DirectoryUsersApi.Controllers.V1
@@ -71,7 +70,7 @@ namespace RiseConsulting.Directory.DirectoryUsersApi.Controllers.V1
 
             DirectoryUsers addedDirectoryUser = await _directoryUsersService.AddDirectoryUserAsync(directoryUser);
 
-            return CreatedAtAction("GetDirectoryUser", "DirectoryUser", new { id = addedDirectoryUser.DirectoryUsersId }, addedDirectoryUser);
+            return CreatedAtAction("GetDirectoryUser", "DirectoryUsers", new { id = addedDirectoryUser.DirectoryUsersId }, addedDirectoryUser);
         }
 
         [HttpPut]

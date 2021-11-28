@@ -1,5 +1,6 @@
 ﻿using RiseConsulting.Directory.Entities.Infrastructure;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -20,5 +21,7 @@ namespace RiseConsulting.Directory.Entities.Models
         [Required]
         [DataType(DataType.Date)]
         public DateTime CreatedDate { get; set; }
+
+        public virtual ICollection<DirectoryUsers> DirectoryUsers { get; set; }
     }
 }

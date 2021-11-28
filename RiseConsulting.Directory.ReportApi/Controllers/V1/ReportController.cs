@@ -38,5 +38,19 @@ namespace RiseConsulting.Directory.ReportApi.Controllers.V1
 
             return Ok(result);
         }
+
+        [HttpGet("{location}")]
+        public IActionResult GetPhoneNumberCountByLocation(string location)
+        {
+            if (string.IsNullOrEmpty(location))
+                return BadRequest();
+
+            ReportReturn result = _reportService.GetPhoneNumberCountByLocation(location);
+
+            if (result is null)
+                return NoContent();
+
+            return Ok(result);
+        }
     }
 }

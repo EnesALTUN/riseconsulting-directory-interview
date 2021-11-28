@@ -20,10 +20,10 @@ namespace RiseConsulting.Directory.ReportService
                     .Select(group => new ReportReturn
                     {
                         Location = group.Key,
-                        CountUsersByLocation = group.Count()
+                        Count = group.Count()
 
                     })
-                    .OrderByDescending(order => order.CountUsersByLocation)
+                    .OrderByDescending(order => order.Count)
                     .ToList();
             }
 
@@ -44,7 +44,29 @@ namespace RiseConsulting.Directory.ReportService
                           select new ReportReturn
                           {
                               Location = g.Key,
-                              CountUsersByLocation = g.Select(x => x.DirectoryUsersId).Distinct().Count()
+                              Count = g.Select(x => x.DirectoryUsersId).Distinct().Count()
+                          }
+                    ).FirstOrDefault();
+            }
+
+            return result;
+        }
+
+        public ReportReturn GetPhoneNumberCountByLocation(string location)
+        {
+            var result = new ReportReturn();
+
+            using (RiseConsultingDirectoryDbContext db = new RiseConsultingDirectoryDbContext())
+            {
+                result = (from communicationInformation in db.CommunicationInformation
+                          join directoryUsers in db.DirectoryUsers
+                            on communicationInformation.DirectoryUsersId equals directoryUsers.DirectoryUsersId
+                          where communicationInformation.Location == location
+                          group communicationInformation by communicationInformation.Location into g
+                          select new ReportReturn
+                          {
+                              Location = g.Key,
+                              Count = g.Select(x => x.PhoneNumber).Distinct().Count()
                           }
                     ).FirstOrDefault();
             }

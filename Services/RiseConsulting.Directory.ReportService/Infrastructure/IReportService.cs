@@ -7,5 +7,6 @@ namespace RiseConsulting.Directory.ReportService.Infrastructure
     {
         List<ReportReturn> GetSortByLocation();
         ReportReturn GetUserCountByLocation(string location);
+        ReportReturn GetPhoneNumberCountByLocation(string location);
     }
 }

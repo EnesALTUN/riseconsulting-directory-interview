@@ -1,7 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
+using Newtonsoft.Json;
 using RiseConsulting.Directory.Core.ReportModel;
 using RiseConsulting.Directory.ReportService.Infrastructure;
+using System;
 using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace RiseConsulting.Directory.ReportApi.Controllers.V1
 {
@@ -11,44 +16,109 @@ namespace RiseConsulting.Directory.ReportApi.Controllers.V1
     public class ReportController : ControllerBase
     {
         private readonly IReportService _reportService;
+        private readonly IDistributedCache _redisDistributedCache;
 
-        public ReportController(IReportService reportService)
+        private readonly DistributedCacheEntryOptions options = new DistributedCacheEntryOptions()
+                    .SetSlidingExpiration(TimeSpan.FromMinutes(10))
+                    .SetAbsoluteExpiration(DateTime.Now.AddHours(1));
+
+        public ReportController(IReportService reportService, IDistributedCache distributedCache)
         {
             _reportService = reportService;
+            _redisDistributedCache = distributedCache;
         }
 
         [HttpGet]
-        public IActionResult GetSortByLocation()
+        public async Task<IActionResult> GetSortByLocation()
         {
-            List<ReportReturn> reportReturn = _reportService.GetSortByLocation();
+            string cacheJsonItem;
+            List<ReportReturn> reportReturns;
 
-            return Ok(reportReturn);
+            var sortByLocationCache = await _redisDistributedCache.GetAsync("GetSortByLocation");
+
+            if (sortByLocationCache is null)
+            {
+                reportReturns = _reportService.GetSortByLocation();
+
+                cacheJsonItem = JsonConvert.SerializeObject(reportReturns);
+
+                sortByLocationCache = Encoding.UTF8.GetBytes(cacheJsonItem);
+
+                await _redisDistributedCache.SetAsync("GetSortByLocation", sortByLocationCache, options);
+            }
+            else
+            {
+                cacheJsonItem = Encoding.UTF8.GetString(sortByLocationCache);
+                reportReturns = JsonConvert.DeserializeObject<List<ReportReturn>>(cacheJsonItem);
+            }
+
+            return Ok(reportReturns);
         }
 
         [HttpGet("{location}")]
-        public IActionResult GetUserCountByLocation(string location)
+        public async Task<IActionResult> GetUserCountByLocation(string location)
         {
             if (string.IsNullOrEmpty(location))
                 return BadRequest();
 
-            ReportReturn result = _reportService.GetUserCountByLocation(location);
+            string cacheJsonItem;
+            string redisKey = $"GetUserCountByLocation{location}";
+            ReportReturn result;
 
-            if (result is null)
-                return NoContent();
+            var userCountByLocationCache = await _redisDistributedCache.GetAsync(redisKey);
+
+            if (userCountByLocationCache is null)
+            {
+                result = _reportService.GetUserCountByLocation(location);
+
+                if (result is null)
+                    return NoContent();
+
+                cacheJsonItem = JsonConvert.SerializeObject(result);
+
+                userCountByLocationCache = Encoding.UTF8.GetBytes(cacheJsonItem);
+
+                await _redisDistributedCache.SetAsync(redisKey, userCountByLocationCache, options);
+            }
+            else
+            {
+                cacheJsonItem = Encoding.UTF8.GetString(userCountByLocationCache);
+                result = JsonConvert.DeserializeObject<ReportReturn>(cacheJsonItem);
+            }
 
             return Ok(result);
         }
 
         [HttpGet("{location}")]
-        public IActionResult GetPhoneNumberCountByLocation(string location)
+        public async Task<IActionResult> GetPhoneNumberCountByLocation(string location)
         {
             if (string.IsNullOrEmpty(location))
                 return BadRequest();
 
-            ReportReturn result = _reportService.GetPhoneNumberCountByLocation(location);
+            string cacheJsonItem;
+            string redisKey = $"GetPhoneNumberCountByLocation{location}";
+            ReportReturn result;
 
-            if (result is null)
-                return NoContent();
+            var phoneNumberCountByLocationCache = await _redisDistributedCache.GetAsync(redisKey);
+
+            if (phoneNumberCountByLocationCache is null)
+            {
+                result = _reportService.GetPhoneNumberCountByLocation(location);
+
+                if (result is null)
+                    return NoContent();
+
+                cacheJsonItem = JsonConvert.SerializeObject(result);
+
+                phoneNumberCountByLocationCache = Encoding.UTF8.GetBytes(cacheJsonItem);
+
+                await _redisDistributedCache.SetAsync(redisKey, phoneNumberCountByLocationCache, options);
+            }
+            else
+            {
+                cacheJsonItem = Encoding.UTF8.GetString(phoneNumberCountByLocationCache);
+                result = JsonConvert.DeserializeObject<ReportReturn>(cacheJsonItem);
+            }
 
             return Ok(result);
         }

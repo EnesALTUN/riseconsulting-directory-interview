@@ -42,6 +42,11 @@ namespace RiseConsulting.Directory.ReportApi
 
             services.AddControllers();
 
+            services.AddStackExchangeRedisCache(action =>
+            {
+                action.Configuration = "localhost:6379";
+            });
+
             services.AddApiVersioning(options =>
             {
                 options.DefaultApiVersion = new ApiVersion(1, 0);

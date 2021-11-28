@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using RiseConsulting.Directory.CommunicationInformationService.Infrastructure;
 using RiseConsulting.Directory.Data;
 using RiseConsulting.Directory.DirectoryUsersService.Infrastructure;
 using RiseConsulting.Directory.Entities.Models;
@@ -35,6 +36,7 @@ namespace RiseConsulting.Directory.DirectoryUsersApi
             services.AddScoped(typeof(IGenericRepository<CommunicationInformation>), typeof(GenericRepository<CommunicationInformation>));
 
             services.AddTransient<IDirectoryUsersService, DirectoryUsersService.DirectoryUsersService>();
+            services.AddTransient<ICommunicationInformationService, CommunicationInformationService.CommunicationInformationService>();
 
             services.AddControllers();
 

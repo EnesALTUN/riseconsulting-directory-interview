@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RiseConsulting.Directory.CommunicationInformationService.Infrastructure;
 using RiseConsulting.Directory.DirectoryUsersService.Infrastructure;
 using RiseConsulting.Directory.Entities.Models;
 using RiseConsulting.Directory.Entities.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace RiseConsulting.Directory.DirectoryUsersApi.Controllers.V1
@@ -13,10 +15,12 @@ namespace RiseConsulting.Directory.DirectoryUsersApi.Controllers.V1
     public class DirectoryUsersController : ControllerBase
     {
         private readonly IDirectoryUsersService _directoryUsersService;
+        private readonly ICommunicationInformationService _communicationInformationService;
 
-        public DirectoryUsersController(IDirectoryUsersService directoryUsersService)
+        public DirectoryUsersController(IDirectoryUsersService directoryUsersService, ICommunicationInformationService communicationInformationService)
         {
             _directoryUsersService = directoryUsersService;
+            _communicationInformationService = communicationInformationService;
         }
 
         [HttpGet]
@@ -40,6 +44,23 @@ namespace RiseConsulting.Directory.DirectoryUsersApi.Controllers.V1
                 return NoContent();
 
             return Ok(result);
+        }
+
+        [HttpPost("{userId}/information/{directoryUserId}")]
+        public async Task<IActionResult> AddDirectoryInformation(Guid userId, Guid directoryUserId, [FromBody] CommunicationInformation communicationInformation)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            DirectoryUsers directoryUser = _directoryUsersService.GetDirectoryUserWithCriteria(filter =>
+                filter.UserId == userId && filter.DirectoryUsersId == directoryUserId);
+
+            if (directoryUser is null)
+                return NoContent();
+
+            CommunicationInformation addedCommunicationInformation =  await _communicationInformationService.AddCommunicationInformationAsync(communicationInformation);
+
+            return Ok(addedCommunicationInformation);
         }
 
         [HttpPost]

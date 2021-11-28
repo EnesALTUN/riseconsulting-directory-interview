@@ -36,15 +36,17 @@ namespace RiseConsulting.Directory.ReportService
 
             using (RiseConsultingDirectoryDbContext db = new RiseConsultingDirectoryDbContext())
             {
-                result = db.CommunicationInformation.Where(loc => loc.Location == location).GroupBy(n => n.Location)
-                    .Select(group => new ReportReturn
-                    {
-                        Location = group.Key,
-                        CountUsersByLocation = group.Count()
-
-                    })
-                    .OrderByDescending(order => order.CountUsersByLocation)
-                    .FirstOrDefault();
+                result = (from communicationInformation in db.CommunicationInformation
+                          join directoryUsers in db.DirectoryUsers
+                            on communicationInformation.DirectoryUsersId equals directoryUsers.DirectoryUsersId
+                          where communicationInformation.Location == location
+                          group communicationInformation by communicationInformation.Location into g
+                          select new ReportReturn
+                          {
+                              Location = g.Key,
+                              CountUsersByLocation = g.Select(x => x.DirectoryUsersId).Distinct().Count()
+                          }
+                    ).FirstOrDefault();
             }
 
             return result;

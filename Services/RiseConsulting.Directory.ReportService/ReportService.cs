@@ -30,9 +30,24 @@ namespace RiseConsulting.Directory.ReportService
             return result;
         }
 
-        public Task<ReportReturn> GetUserCountByLocation(string location)
+        public ReportReturn GetUserCountByLocation(string location)
         {
-            throw new NotImplementedException();
+            var result = new ReportReturn();
+
+            using (RiseConsultingDirectoryDbContext db = new RiseConsultingDirectoryDbContext())
+            {
+                result = db.CommunicationInformation.Where(loc => loc.Location == location).GroupBy(n => n.Location)
+                    .Select(group => new ReportReturn
+                    {
+                        Location = group.Key,
+                        CountUsersByLocation = group.Count()
+
+                    })
+                    .OrderByDescending(order => order.CountUsersByLocation)
+                    .FirstOrDefault();
+            }
+
+            return result;
         }
     }
 }

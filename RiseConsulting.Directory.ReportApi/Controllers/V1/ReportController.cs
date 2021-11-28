@@ -24,5 +24,19 @@ namespace RiseConsulting.Directory.ReportApi.Controllers.V1
 
             return Ok(reportReturn);
         }
+
+        [HttpGet("{location}")]
+        public IActionResult GetUserCountByLocation(string location)
+        {
+            if (string.IsNullOrEmpty(location))
+                return BadRequest();
+
+            ReportReturn result = _reportService.GetUserCountByLocation(location);
+
+            if (result is null)
+                return NoContent();
+
+            return Ok(result);
+        }
     }
 }

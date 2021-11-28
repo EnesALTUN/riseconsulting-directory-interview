@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RiseConsulting.Directory.DirectoryUsersService.Infrastructure;
 using RiseConsulting.Directory.Entities.Models;
+using RiseConsulting.Directory.Entities.ViewModels;
 using System;
 using System.Threading.Tasks;
 
@@ -28,6 +29,17 @@ namespace RiseConsulting.Directory.DirectoryUsersApi.Controllers.V1
         public async Task<IActionResult> GetDirectoryUser(Guid id)
         {
             return Ok(await _directoryUsersService.GetDirectoryUserByIdAsync(id));
+        }
+
+        [HttpGet("{userId}/information/{directoryUserId}")]
+        public IActionResult GetDirectoryUserInformation(Guid userId, Guid directoryUserId)
+        {
+            DirectoryUsersInformationVM result = _directoryUsersService.GetDirectoryUsersDetail(userId, directoryUserId);
+
+            if (result is null)
+                return NoContent();
+
+            return Ok(result);
         }
 
         [HttpPost]

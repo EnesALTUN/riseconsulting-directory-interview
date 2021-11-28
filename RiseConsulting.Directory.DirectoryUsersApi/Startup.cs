@@ -32,6 +32,7 @@ namespace RiseConsulting.Directory.DirectoryUsersApi
             );
 
             services.AddScoped(typeof(IGenericRepository<DirectoryUsers>), typeof(GenericRepository<DirectoryUsers>));
+            services.AddScoped(typeof(IGenericRepository<CommunicationInformation>), typeof(GenericRepository<CommunicationInformation>));
 
             services.AddTransient<IDirectoryUsersService, DirectoryUsersService.DirectoryUsersService>();
 

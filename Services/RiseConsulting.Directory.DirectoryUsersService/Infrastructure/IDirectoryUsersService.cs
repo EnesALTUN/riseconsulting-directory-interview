@@ -1,4 +1,5 @@
 ﻿using RiseConsulting.Directory.Entities.Models;
+using RiseConsulting.Directory.Entities.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -15,6 +16,7 @@ namespace RiseConsulting.Directory.DirectoryUsersService.Infrastructure
         DirectoryUsers GetDirectoryUserById(object id);
 
         Task<DirectoryUsers> GetDirectoryUserByIdAsync(object id);
+        DirectoryUsersInformationVM GetDirectoryUsersDetail(Guid userId, Guid directoryUserId);
 
         DirectoryUsers GetDirectoryUserWithCriteria(Expression<Func<DirectoryUsers, bool>> filterExpression);
 

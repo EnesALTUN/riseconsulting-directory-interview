@@ -35,6 +35,12 @@ talebi
   - **[GET]** /service/v{version}/Report/GetUserCountByLocation/{location}
   - **[GET]** /service/v{version}/Report/GetPhoneNumberCountByLocation/{location}
 - Communication Information Api
+  - **[GET]** /service/v{version}/CommunicationInformation
+  - **[POST]** /service/v{version}/CommunicationInformation
+  - **[PUT]** /service/v{version}/CommunicationInformation
+  - **[GET]** /service/v{version}/CommunicationInformation/{id}
+  - **[DELETE]** /service/v{version}/CommunicationInformation/{id}
+- Directory Users Api- 
   - **[GET]** /service/v{version}/DirectoryUsers
   - **[POST]** /service/v{version}/DirectoryUsers
   - **[PUT]** /service/v{version}/DirectoryUsers
@@ -43,12 +49,6 @@ talebi
   - **[GET]** /service/v{version}/DirectoryUsers/{userId}/information/{directoryUserId}
   - **[POST]** /service/v{version}/DirectoryUsers/{userId}/information/{directoryUserId}
   - **[DELETE]** /service/v{version}/DirectoryUsers/{userId}/directory/{directoryUserId}/information/{informationId}
-- Directory Users Api
-  - **[GET]** /service/v{version}/CommunicationInformation
-  - **[POST]** /service/v{version}/CommunicationInformation
-  - **[PUT]** /service/v{version}/CommunicationInformation
-  - **[GET]** /service/v{version}/CommunicationInformation/{id}
-  - **[DELETE]** /service/v{version}/CommunicationInformation/{id}
 - Company Api
   - **[GET]** /service/v{version}/Company
   - **[POST]** /service/v{version}/Company

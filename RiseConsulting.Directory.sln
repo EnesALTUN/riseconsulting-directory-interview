@@ -43,6 +43,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiseConsulting.Directory.CompanyApiTest", "tests\UnitTests\RiseConsulting.Directory.CompanyApiTest\RiseConsulting.Directory.CompanyApiTest\RiseConsulting.Directory.CompanyApiTest.csproj", "{BFA65523-75A1-4F89-9C15-9885FFBB34B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.CommunicationInformationApiTest", "tests\UnitTests\RiseConsulting.Directory.CommunicationInformationApiTest\RiseConsulting.Directory.CommunicationInformationApiTest.csproj", "{564C8E43-54A5-4E02-BB32-8474BAE01295}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,10 @@ Global
 		{BFA65523-75A1-4F89-9C15-9885FFBB34B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFA65523-75A1-4F89-9C15-9885FFBB34B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFA65523-75A1-4F89-9C15-9885FFBB34B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{564C8E43-54A5-4E02-BB32-8474BAE01295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{564C8E43-54A5-4E02-BB32-8474BAE01295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{564C8E43-54A5-4E02-BB32-8474BAE01295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{564C8E43-54A5-4E02-BB32-8474BAE01295}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -130,6 +136,7 @@ Global
 		{FDF8D612-D453-4F37-9B9E-F830D9D928EB} = {0E5A32AD-410D-48A8-99A7-7E78D7A9E3AB}
 		{4BC02086-2935-4850-8F84-10D7B7DEF3B9} = {FDF8D612-D453-4F37-9B9E-F830D9D928EB}
 		{BFA65523-75A1-4F89-9C15-9885FFBB34B7} = {FDF8D612-D453-4F37-9B9E-F830D9D928EB}
+		{564C8E43-54A5-4E02-BB32-8474BAE01295} = {FDF8D612-D453-4F37-9B9E-F830D9D928EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D170D37-24C2-4DBC-9CD3-972CAFFDE8F2}

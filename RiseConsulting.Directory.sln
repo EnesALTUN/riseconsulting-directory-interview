@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.Us
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.ReportService.Test", "tests\UnitTests\Services\RiseConsulting.Directory.ReportService.Test\RiseConsulting.Directory.ReportService.Test.csproj", "{9741F115-EB37-4935-8677-79F795661146}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiseConsulting.Directory.DirectoryUsersService.Test", "tests\UnitTests\Services\RiseConsulting.Directory.DirectoryUsersService.Test\RiseConsulting.Directory.DirectoryUsersService.Test.csproj", "{89B6011D-2393-42B5-A629-04565633861E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,10 @@ Global
 		{9741F115-EB37-4935-8677-79F795661146}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9741F115-EB37-4935-8677-79F795661146}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9741F115-EB37-4935-8677-79F795661146}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89B6011D-2393-42B5-A629-04565633861E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89B6011D-2393-42B5-A629-04565633861E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89B6011D-2393-42B5-A629-04565633861E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89B6011D-2393-42B5-A629-04565633861E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -161,6 +167,7 @@ Global
 		{82388C77-EC1D-49CC-8796-2A1FC59A1312} = {FDF8D612-D453-4F37-9B9E-F830D9D928EB}
 		{6B4B981A-4DEB-442F-975B-47DDEA48DB99} = {82388C77-EC1D-49CC-8796-2A1FC59A1312}
 		{9741F115-EB37-4935-8677-79F795661146} = {82388C77-EC1D-49CC-8796-2A1FC59A1312}
+		{89B6011D-2393-42B5-A629-04565633861E} = {82388C77-EC1D-49CC-8796-2A1FC59A1312}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D170D37-24C2-4DBC-9CD3-972CAFFDE8F2}
